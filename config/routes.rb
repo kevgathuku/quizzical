@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  scope '/api' do
+    resources :quizzes
+  end
+
   namespace :admin do
       resources :quizzes
 
