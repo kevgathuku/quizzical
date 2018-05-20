@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
   devise_for :users
 
-  scope '/api' do
+  # API Routes
+  namespace :api do
     resources :quizzes
   end
 
-  namespace :admin do
-      resources :quizzes
-      resources :users
+  # React-rendered routes
+  root to: "home_page#index"
 
-      root to: "quizzes#index"
-    end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resources :quizzes
+    resources :users
+
+    root to: "quizzes#index"
+  end
 end
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
