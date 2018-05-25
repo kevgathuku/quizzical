@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create(
+    email: "admin@example.com",
+    password: "123456",
+    password_confirmation: "123456"
+)
+user.save!
+Quiz.create([{title: 'Hamilton', description: 'Test your knowledge on Hamilton', user: user }, {title: 'English Teams', description: 'Test your knowledge on English Football teams', user: user }])
