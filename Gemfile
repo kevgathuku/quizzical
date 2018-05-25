@@ -73,4 +73,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mini_racer', platforms: :ruby
 
-gem 'blorgh', path: 'engines/blorgh'
+gem 'blorgh', path: 'blorgh'
