@@ -1,3 +1,9 @@
+PATH
+  remote: blorgh
+  specs:
+    blorgh (0.1.0)
+      rails (~> 5.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -268,6 +274,7 @@ DEPENDENCIES
   administrate
   better_errors
   binding_of_caller
+  blorgh!
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15, < 4.0)
