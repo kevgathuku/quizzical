@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # React-rendered routes
   root to: "home_page#index"
 
+  mount Blorgh::Engine, at: '/blog'
+
   namespace :admin do
     resources :quizzes
     resources :users
