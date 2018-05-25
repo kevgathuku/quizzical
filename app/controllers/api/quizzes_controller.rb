@@ -2,7 +2,7 @@ module Api
   class QuizzesController < ApplicationController
     def index
       @quizzes = Quiz.all
-      render json: QuizSerializer.new(@quizzes).serialized_json
+      render json: @quizzes
     end
   end
 end

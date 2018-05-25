@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const HelloWorld = props => {
-  const { data } = props;
+  const { quizzes } = props;
 
   return (
     <div>
-      {data.map(quiz => (
+      {quizzes.map(quiz => (
         <React.Fragment key={quiz.id}>
-          <h4>{quiz.attributes.title}</h4>
-          <p>{quiz.attributes.description}</p>
+          <h4>{quiz.title}</h4>
+          <p>{quiz.description}</p>
         </React.Fragment>
       ))}
     </div>
@@ -17,7 +17,7 @@ const HelloWorld = props => {
 };
 
 HelloWorld.propTypes = {
-  data: PropTypes.array.isRequired // this is passed from the Rails view
+  quizzes: PropTypes.array.isRequired // this is passed from the Rails view
 };
 
 export default HelloWorld;
