@@ -3,6 +3,7 @@ PATH
   specs:
     blorgh (0.1.0)
       rails (~> 5.2.0)
+      react_on_rails (= 11.0.0)
 
 GEM
   remote: https://rubygems.org/
