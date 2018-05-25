@@ -1,5 +1,5 @@
 PATH
-  remote: blorgh
+  remote: engines/blorgh
   specs:
     blorgh (0.1.0)
       rails (~> 5.2.0)
