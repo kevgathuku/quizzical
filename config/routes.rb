@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-
   # API Routes
   namespace :api do
     resources :quizzes
@@ -11,7 +9,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :quizzes
-    resources :users
 
     root to: "quizzes#index"
   end

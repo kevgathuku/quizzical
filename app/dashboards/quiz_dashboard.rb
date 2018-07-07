@@ -11,7 +11,6 @@ class QuizDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
-    user: Field::BelongsTo.with_options(class_name: "User"),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -44,7 +43,6 @@ class QuizDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :description,
-    :user,
   ].freeze
 
   # Overwrite this method to customize how quizzes are displayed

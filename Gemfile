@@ -37,8 +37,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'administrate'
 
-gem 'devise'
-
 gem 'react_on_rails', '11.0.0'
 
 # Reduces boot times through caching; required in config/boot.rb
