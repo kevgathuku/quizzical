@@ -19,7 +19,7 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 class ChoiceAdmin(admin.ModelAdmin):
-    list_display = ('choice_text', 'question', 'votes',)
+    list_display = ('choice_text', 'votes',)
     list_filter = ['question']
     search_fields = ['choice_text']
 
