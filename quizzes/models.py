@@ -42,3 +42,6 @@ class Choice(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     correct_choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} {}".format(self.question.question_text, self.correct_choice.choice_text)
