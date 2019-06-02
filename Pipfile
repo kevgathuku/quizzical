@@ -11,6 +11,7 @@ ipdb = "*"
 django = "*"
 django-extensions = "*"
 ipython = "*"
+django-webpack-loader = "*"
 
 [requires]
 python_version = "3.7"
