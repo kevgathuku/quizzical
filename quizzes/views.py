@@ -4,7 +4,18 @@ from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
 
+from rest_framework import viewsets
+from .serializers import QuizSerializer
+
 from .models import Answer, Choice, Question, Quiz
+
+
+class QuizViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Quizzes to be viewed or edited.
+    """
+    queryset = Quiz.objects.all().order_by('-pub_date')
+    serializer_class = QuizSerializer
 
 
 class IndexView(generic.ListView):
