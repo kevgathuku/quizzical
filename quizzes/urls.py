@@ -11,5 +11,5 @@ urlpatterns = [
     # ex: /quizzes/5/results/
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     # ex: /quizzes/5/vote/
-    path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('<int:quiz_id>/submit/', views.process_answers, name='process_answers'),
 ]
