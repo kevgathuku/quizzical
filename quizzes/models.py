@@ -19,7 +19,7 @@ class Quiz(models.Model):
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
-    quiz = models.ManyToManyField(Quiz)
+    quiz = models.ForeignKey(Quiz, models.SET_NULL, blank=True, null=True)
 
     def was_published_recently(self):
         now = timezone.now()
@@ -44,4 +44,6 @@ class Answer(models.Model):
     correct_choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{} {}".format(self.question.question_text, self.correct_choice.choice_text)
+        return "{} {}".format(
+            self.question.question_text, self.correct_choice.choice_text
+        )
