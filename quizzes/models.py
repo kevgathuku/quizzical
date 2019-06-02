@@ -18,13 +18,7 @@ class Quiz(models.Model):
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField("date published")
     quiz = models.ForeignKey(Quiz, models.SET_NULL, blank=True, null=True)
-
-    def was_published_recently(self):
-        now = timezone.now()
-        # The pub_date should be between now and 1 day ago
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
     def __str__(self):
         return self.question_text

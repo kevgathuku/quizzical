@@ -13,13 +13,8 @@ class QuestionInline(admin.TabularInline):
     extra = 3
 
 class QuestionAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {"fields": ["question_text"]}),
-        ("Date information", {"fields": ["pub_date"]}),
-    ]
     inlines = [ChoiceInline]
-    list_display = ("question_text", "pub_date", "was_published_recently")
-    list_filter = ["pub_date"]
+    list_display = ("question_text",)
     search_fields = ["question_text"]
 
 
@@ -33,7 +28,9 @@ class AnswerAdmin(admin.ModelAdmin):
     list_display = ("question", "correct_choice")
 
 class QuizAdmin(admin.ModelAdmin):
+    list_display = ("description", "pub_date", "was_published_recently")
     inlines = [QuestionInline]
+    list_filter = ["pub_date"]
 
 
 admin.site.register(Question, QuestionAdmin)
