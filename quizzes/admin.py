@@ -8,6 +8,10 @@ class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
 
+class QuestionInline(admin.TabularInline):
+    model = Question
+    extra = 3
+
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {"fields": ["question_text"]}),
@@ -28,8 +32,11 @@ class ChoiceAdmin(admin.ModelAdmin):
 class AnswerAdmin(admin.ModelAdmin):
     list_display = ("question", "correct_choice")
 
+class QuizAdmin(admin.ModelAdmin):
+    inlines = [QuestionInline]
+
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice, ChoiceAdmin)
-admin.site.register(Quiz)
+admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Answer, AnswerAdmin)
